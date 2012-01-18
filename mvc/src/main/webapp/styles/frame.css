@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+body {
+	padding: 0px;
+	margin: 0px;
+	color: #5F7A77;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+div,p,ul,h2,h3,h4,h5,img {
+	padding: 0px;
+	margin: 0px;
+}
+ul {
+	list-style-type: none;
+}
+
+/*---------header----------*/
+#topPan {
+	height: 65px;
+	background: url(../images/topbg.jpg) 0 0 no-repeat;
+	color: #828282;
+	margin-left: 15px;
+	padding-left: 85px;
+}
+#systemName {
+	margin-top: 12px;
+}
+#systemName a {
+	color: #09BCA6;
+	font-size: 30px;	
+	text-decoration: none;
+}
+
+/*---------center----------*/
+#centerPan {
+	margin: auto auto auto auto;
+	padding-left: 5px;
+	padding-top: 0px;
+}
+
+#centerPan h2 {
+	width: 96px;
+	height: 77px;
+	float: left;
+	display: block;
+	background: url(../images/icon3.jpg) 8px 38px no-repeat #B1DED5;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+	text-transform: uppercase;
+	padding: 46px 0 0 75px;
+	margin: 0 0 5px 0;
+}
+
+#centerPan ul.services {
+	width: 137px;
+	height: 114px;
+	float: left;
+	border: 1px solid #B1DED5;
+	background: #fff;
+	color: #5F7A77;
+	padding: 7px 0 0 25px;
+}
+
+#centerPan ul.services li.captionone {
+	background: #fff;
+	color: #AC9601;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#centerPan ul.services li {
+	width: 137px;
+	height: 20px;
+}
+
+#centerPan ul.services li a {
+	width: 125px;
+	height: 20px;
+	display: block;
+	background: url(../images/bullet2-normal.gif) 0 7px no-repeat #fff;
+	color: #5F7A77;
+	text-decoration: none;
+	line-height: 20px;
+	padding: 0 0 0 12px;
+}
+
+#centerPan ul.services li a:hover {
+	background: url(../images/bullet2-hover.gif) 0 7px no-repeat #fff;
+	color: #5F7A77;
+	text-decoration: none;
+}
+
+#centerPan ul.servicestwo {
+	width: 137px;
+	height: 114px;
+	border-bottom: 1px solid #B1DED5;
+	border-top: 1px solid #B1DED5;
+	border-right: 1px solid #B1DED5;
+	background: #fff;
+	color: #5F7A77;
+	padding: 7px 0 0 25px;
+}
+
+#centerPan ul.servicestwo li.captiontwo {
+	background: #fff;
+	color: #AC9601;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#centerPan ul.servicestwo li {
+	width: 137px;
+	height: 20px;
+}
+
+#centerPan ul.servicestwo li a {
+	width: 125px;
+	height: 20px;
+	display: block;
+	background: url(../images/bullet2-normal.gif) 0 7px no-repeat #fff;
+	color: #5F7A77;
+	text-decoration: none;
+	line-height: 20px;
+	padding: 0 0 0 12px;
+}
+
+#centerPan ul.servicestwo li a:hover {
+	background: url(../images/bullet2-hover.gif) 0 7px no-repeat #fff;
+	color: #5F7A77;
+	text-decoration: none;
+}
+
+/*---------left side and right side---------*/
+#leftPan {
+	padding-left: 25px;
+	padding-top: 15px;
+}
+
+#leftPan ul {
+    display:none;
+}
+#leftPan h2 {
+	height: 30px;
+	color: #5F7A77;
+	font-size: 12px;
+	line-height: 30px;
+	cursor: pointer;
+}
+#leftPan ul li {
+	height: 24px;
+}
+#leftPan ul li a {
+	height: 24px;
+	display: block;
+	background: url(../images/bullet2-normal.gif) 0 10px no-repeat #fff;
+	color: #5F7A77;
+	text-decoration: none;
+	line-height: 24px;
+	padding: 0 0 0 12px;
+}
+#leftPan ul li a:hover {
+	background: url(../images/bullet2-hover.gif) 0 10px no-repeat #fff;
+	color: #5F7A77;
+	text-decoration: none;
+}
+#leftPan ul li span {
+	text-decoration: underline;
+}
+
+/*----------footer----------*/
+#footermainPan {	
+	background: #EBF8F7;
+	color: #2F5958;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	height: 44px;
+	padding-top: 4px;
+}
+#footerPan {
+	width: 570px;
+	margin: 0 auto;
+}
+#footerPan li { 
+	float: left;
+}
+#footerPan ul li a {
+	padding: 0 10px 0;
+	color: #2F5958;
+	text-decoration: none;
+	font-size: 12px;
+}
+#footerPan ul li a:hover {
+	text-decoration: underline;
+}
+#footerPan div.copyright {
+	clear: both;
+	font-size: 11px;
+	margin-left: 10px;
+	margin-top: 2px;
+}
+
+/*-------------- custom -------------*/
+#sub_info {
+	width: 100%;
+	background-image: url(/images/system/manage_r3_c11.gif);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #B0C4DE;
+	height: 27px;
+	background-repeat: repeat-x;
+	padding: 0px 0 0 0;
+	margin-bottom:10px;
+}

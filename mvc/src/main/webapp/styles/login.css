@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body {
+	margin: 0px;
+}
+.required {
+	border: solid 0px;
+	color: #4B4B4B;
+	font-size: 16px;
+	width: 252px;
+}
+#mainDiv {
+	background: url("../images/login/login_bg.jpg");
+	height: 680px;
+	margin: 0px auto;
+	width: 980px;
+}
+#mainDiv li {
+	list-style: none;
+	margin-left: 387px;
+}
+#username {	
+	margin-top: 221px;
+}
+#password {	
+	margin-top: 27px;
+}
+#input3 {
+	float: left;
+	margin-left: 16px;
+	margin-top: 26px;
+	width: 127px;
+}
+#confirm {
+	height: 28px;
+	margin-top: 4px;
+	margin-left: 158px;
+	width: 115px;
+}
+#input4 {
+	margin-left: -6px;
+	margin-top: 10px;
+}
+#input5 {
+	background: url("../images/login/button.png") no-repeat;
+	border: solid 0px;
+	height: 33px;
+	margin-left: -2px;
+	margin-top: 25px;
+	width: 78px;
+}
+#input5:hover {
+	background: url("../images/login/button_hover.png") no-repeat;
+}

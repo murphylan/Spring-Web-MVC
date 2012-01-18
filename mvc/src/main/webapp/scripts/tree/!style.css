@@ -1,0 +1,27 @@
+
+pre { display:block; }
+.code_f { border:1px solid gray; margin-bottom:1em; }
+.syntaxhighlighter { margin:0 0 0 0 !important; padding:0 !important; line-height:18px; }
+
+.log { padding:4px; border:1px solid gray; margin-bottom:1em; }
+.button { display:block; margin-bottom:0.5em; }
+.arguments { margin:0em 1em; padding:0; list-style-type:none; }
+.arguments .tp { padding:0 0 0 0; float:left; width:70px;  }
+.arguments strong { display:block; }
+
+.api h3 { margin-left:-10px; color:black; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; font-weight: normal !important; font-size:14px; margin-top:2em; border-top:1px solid; width:780px; }
+.api .arguments li strong {  color:black; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; font-weight: normal !important; font-size:13px; }
+
+.configuration h3 { margin-left:-10px; color:black; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; font-weight: normal !important; font-size:14px; margin-top:2em; border-top:1px solid; width:780px; }
+.note { background:#ffffee; padding:10px 20px; border:1px solid #333; -moz-border-radius:5px; border-radius:5px; -webkit-border-radius:5px; margin-bottom:15px; text-align:center; font-weight:bold; }
+
+ul.columns { list-style-type:none; width:700px; margin:5px auto 15px auto; padding:0; overflow:hidden; }
+ul.columns li { float:left; margin:0; padding:0 0 0 0px; line-height:18px; width:345px; }
+ul.plugins li { width:220px; text-align:left; padding:5px 0; }
+ul.plugins li a { text-decoration:none; color:#3B5998; }
+ul.plugins li a:hover { text-decoration:underline; }
+ul.plugins li p { text-align:left; font-size:9px; color:#333; margin:0 5px 0 0; }
+
+.demo, .demo input, .jstree-dnd-helper, #vakata-contextmenu { font-size:10px; font-family:Verdana; }
+
+ 

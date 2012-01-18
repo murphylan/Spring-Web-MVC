@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+body {
+	margin: 0px;
+}
+#mainDiv {
+	margin: 20px auto 0px auto;
+	width: 470px;
+}
+#image404 {
+	background: url(../images/error/bg-404.gif) no-repeat;
+	height: 274px;
+	width: 470px;
+}
+#title404 {
+	background: url(../images/error/title-404.gif) no-repeat;
+	height: 42px;
+	width: 470px;
+}
+#prompt {
+	color: #4B4B4B;
+	font-family: "Arial";
+	font-size: 12px;
+}

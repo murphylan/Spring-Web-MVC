@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:s="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>SpringSecurity安全配置</description>
+
+	<!-- http安全配置 -->
+	<s:http auto-config="true" access-denied-page="/common/403.html" use-expressions="true">
+		<s:intercept-url pattern="/*.jpg" filters="none" />
+		<s:intercept-url pattern="/*.png" filters="none" />
+		<s:intercept-url pattern="/*.gif" filters="none" />
+		<s:intercept-url pattern="/*.css" filters="none" />
+		<s:intercept-url pattern="/*.js" filters="none" />
+		<s:intercept-url pattern="/*.ico" filters="none" />
+		<s:intercept-url pattern="/login.**" filters="none" />
+		<s:intercept-url pattern="/common/*.htm" filters="none" />
+		<!-- 
+		<s:intercept-url pattern="/account/**" filters="none" />
+		 -->
+		<!--  
+		<s:intercept-url pattern="/dictionary/**" access="IS_AUTHENTICATED_FULLY" />
+		<s:intercept-url pattern="/system/**" access="IS_AUTHENTICATED_FULLY" />-->
+		
+		<s:intercept-url pattern="/security/authoritylist/**" access="hasAnyRole('ROLE_AUTHORITY_LIST')"/>
+		<s:intercept-url pattern="/security/authorityinput/**" access="hasAnyRole('ROLE_AUTHORITY_ADD')"/>
+		<s:intercept-url pattern="/security/getauthority/**" access="hasAnyRole('ROLE_AUTHORITY_GET')"/>
+		<s:intercept-url pattern="/security/delauthority/**" access="hasAnyRole('ROLE_AUTHORITY_REMOVE')"/>
+		<s:intercept-url pattern="/security/rolelist/**" access="hasAnyRole('ROLE_ROLE_LIST')"/>
+		<s:intercept-url pattern="/security/roleinput/**" access="hasAnyRole('ROLE_ROLE_ADD')"/>
+		<s:intercept-url pattern="/security/getrole/**" access="hasAnyRole('ROLE_ROLE_GET')"/>
+		<s:intercept-url pattern="/security/delrole/**" access="hasAnyRole('ROLE_ROLE_REMOVE')"/>
+		<s:intercept-url pattern="/security/userlist/**" access="hasAnyRole('ROLE_USER_LIST')"/>
+		<s:intercept-url pattern="/security/userinput/**" access="hasAnyRole('ROLE_USER_ADD')"/>
+		<s:intercept-url pattern="/security/getuser/**" access="hasAnyRole('ROLE_USER_GET')"/>
+		<s:intercept-url pattern="/security/deluser/**" access="hasAnyRole('ROLE_USER_REMOVE')"/>
+		<s:intercept-url pattern="/article/list/**" access="hasAnyRole('ROLE_ARTICLE_LIST')"/>
+		<s:intercept-url pattern="/article/input/**" access="hasAnyRole('ROLE_ARTICLE_ADD')"/>
+		<s:intercept-url pattern="/article/get/**" access="hasAnyRole('ROLE_ARTICLE_GET')"/>
+		<s:intercept-url pattern="/article/del/**" access="hasAnyRole('ROLE_ARTICLE_REMOVE')"/>
+		<s:intercept-url pattern="/article/detail/**" access="hasAnyRole('ROLE_ARTICLE_VIEW')"/>
+		<s:intercept-url pattern="/article/create/**" access="hasAnyRole('ROLE_ARTICLE_SAVE')"/>
+		<s:intercept-url pattern="/article/delAll/**" access="hasAnyRole('ROLE_ARTICLE_REMOVE_ALL')"/>
+		<s:intercept-url pattern="/article/download/**" access="hasAnyRole('ROLE_ATTACHMENT_DOWNLOAD')"/>
+		<s:intercept-url pattern="/article/delAttachement/**" access="hasAnyRole('ROLE_ATTACHMENT_REMOVE')"/>
+		<s:intercept-url pattern="/article/upload/**" access="hasAnyRole('ROLE_ATTACHMENT_UPLOAD')"/>
+		<s:intercept-url pattern="/tree/add/**" access="hasAnyRole('ROLE_TREE_NODE_ADD')"/>
+		<s:intercept-url pattern="/tree/view/**" access="hasAnyRole('ROLE_TREE_VIEW')"/>
+		<s:intercept-url pattern="/tree/del/**" access="hasAnyRole('ROLE_TREE_NODE_REMOVE')"/>
+		<s:intercept-url pattern="/tree/get/**" access="hasAnyRole('ROLE_TREE_NODE_VIEW')"/>
+		<s:intercept-url pattern="/tree/move/**" access="hasAnyRole('ROLE_TREE_NODE_MOVE')"/>
+		<s:intercept-url pattern="/tree/search/**" access="hasAnyRole('ROLE_TREE_NODE_SEARCH')"/>
+		<s:intercept-url pattern="/tree/list/**" access="hasAnyRole('ROLE_TREE_NODE_LIST')"/>
+		<s:intercept-url pattern="/dictionary/input/**" access="hasAnyRole('ROLE_ROLE_DICTIONARY_ADD')"/>
+		<s:intercept-url pattern="/dictionary/list/**" access="hasAnyRole('ROLE_ROLE_DICTIONARY_LIST')"/>
+		<s:intercept-url pattern="/dictionary/del/**" access="hasAnyRole('ROLE_ROLE_DICTIONARY_REMOVE')"/>
+		<s:intercept-url pattern="/dictionary/get/**" access="hasAnyRole('ROLE_ROLE_DICTIONARY_GET')"/>
+		
+		<s:intercept-url pattern="/*" access="isAuthenticated()" />
+		<s:form-login login-page="/login.jsp" default-target-url="/success.jsp"
+			authentication-failure-url="/login.jsp?error=1" />
+		<s:logout logout-success-url="/login.jsp" invalidate-session="true" />
+		<s:remember-me key="e37f4b31-0c45-11dd-bd0b-0800200c9a66"
+			token-validity-seconds="259200" />
+		<s:session-management invalid-session-url="/login.jsp?error=7">
+			<s:concurrency-control max-sessions="1"
+				error-if-maximum-exceeded="false" expired-url="/login.jsp?error=3" />
+		</s:session-management>
+	</s:http>
+
+	<!-- 方法安全配置 -->
+	<s:global-method-security secured-annotations="enabled" />
+
+	<!-- 认证配置, 使用userDetailsService提供的用户信息 -->
+	<s:authentication-manager alias="authenticationManager">
+		<s:authentication-provider user-service-ref="userDetailsService">
+			<s:password-encoder hash="md5">
+				<s:salt-source user-property="username" />
+			</s:password-encoder>
+		</s:authentication-provider>
+	</s:authentication-manager>
+
+	<!-- 项目实现的用户查询服务 -->
+	<bean id="userDetailsService" class="san.service.system.UserDetailsServiceImpl">
+	</bean>
+</beans>
